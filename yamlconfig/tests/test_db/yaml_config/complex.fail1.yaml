@@ -1,0 +1,13 @@
+slaves:
+    l3site:
+        caps:
+                builder: [build]
+                location: l3
+                speed: fast
+        slaves: [buildbot1build]
+    l123site:
+        caps:
+                builder: [autolint, build]
+                location: l123
+                speed: fast
+        slaves: [build3build, build4build, build5build]

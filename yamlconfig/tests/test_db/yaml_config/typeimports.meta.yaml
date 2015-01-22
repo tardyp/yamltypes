@@ -1,0 +1,7 @@
+imports:
+    - additional.type.yaml
+root:
+    type: dict
+    kids:
+        foo:
+            type: listoffoos

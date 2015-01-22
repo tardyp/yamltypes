@@ -1,0 +1,4 @@
+l1:
+    useless: true
+invalid_key:
+    useless: false

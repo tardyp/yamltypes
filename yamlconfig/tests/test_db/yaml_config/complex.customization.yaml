@@ -1,0 +1,12 @@
+complex.yaml:
+    slaves.l3site:
+        caps:
+            builder: [build]
+            location: l3
+        slaves: [buildbot20build]
+    slaves.l1site:
+        caps:
+                builder: [autolint, build]
+                location: l4
+                speed: fast
+        slaves: [build3build, build4build, build5build]

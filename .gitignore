@@ -1,0 +1,13 @@
+_trial_temp
+*.pyc
+*.pyo
+*.swp
+*.bak
+*~
+*#
+*.egg-info
+install
+.project
+.pydevproject
+_build
+sandbox

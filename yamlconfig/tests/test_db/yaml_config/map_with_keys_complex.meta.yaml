@@ -1,0 +1,9 @@
+root:
+      type: mapofdicts
+      name: useless
+      names_type: location
+      needs_basetypes: true
+      kids:
+          useless:
+             type: boolean
+             required: true

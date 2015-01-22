@@ -1,0 +1,7 @@
+complex.yaml:
+    # extend a list
+    slaves.l4site.slaves:EXTEND: [buildbot6build, buildbot5build, buildbot8build, buildbot7build, buildbot10build, buildbot9build]
+
+    # add several new items to a dict
+    slaves.l1site.new_item1: 'hello1'
+    slaves.l1site.new_item2: 'hello2'
