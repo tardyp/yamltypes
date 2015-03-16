@@ -13,7 +13,7 @@ version = 1.0
 README = open(os.path.join(os.path.dirname(__file__), "README.rst")).read()
 
 setup(
-    name="yamlconfig",
+    name="yamltypes",
     version=version,
     url="http://github.com/tardyp/yamlconfig",
     description="tools for validating, documenting, and editing json and yaml data",
@@ -35,8 +35,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'yamlconfig=yamlconfig.cli:main',
-            'yaml2rst=yamlconfig.yaml2rst:main',
+            'yamlvalidate=yamltypes.cli:main',
+            'yaml2rst=yamltypes.yaml2rst:main',
         ],
     },
     classifiers=[
