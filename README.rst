@@ -1,4 +1,4 @@
-Yamlconfig
+Yamltypes
 ==========
 
 Tools for loading and validating yaml config files.
@@ -12,7 +12,7 @@ package is shipped with 2 entry points scripts:
 * yaml2rst: This tool automatically creates a rst documentation of the types defined in a directory.
 
 
-YamlConfig module
+Yamltypes module
 =================
 
 A common problem for the complex CI system developer is to separate
