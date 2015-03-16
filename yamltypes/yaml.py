@@ -41,7 +41,7 @@
 #
 # with::
 #
-#   from yamlconfig import yaml
+#   from yamltypes import yaml
 #
 # and continue working with this yaml module as you would do with the PyYaml module::
 #
