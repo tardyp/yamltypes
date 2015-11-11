@@ -1,6 +1,12 @@
 .. image:: https://travis-ci.org/tardyp/yamltypes.svg
     :target: https://travis-ci.org/tardyp/yamltypes
+.. image:: https://badge.fury.io/py/yamltypes.svg
+    :target: https://badge.fury.io/py/yamltypes
+.. image:: https://img.shields.io/badge/python-2.6,2.7,3.3,3.4,pypy-blue.svg
+    :alt: Python 2.6, 2.7, 3.3, 3.4, pypy
+    :target: https://pypi.python.org/pypi/yamltypes/
 
+Supported
 Yamltypes
 ==========
 
