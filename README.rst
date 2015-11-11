@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/tardyp/yamltypes.svg
+    :target: https://travis-ci.org/tardyp/yamltypes
+
 Yamltypes
 ==========
 
