@@ -325,7 +325,7 @@ class TestCustomizationRuleSyntax(BaseTestCase):
     def test_applyCustomizationRuleDeleteMissingNode(self):
         self.assertRaisesWithMessage(
             ValueError,
-            "a.d:DELETE' wants to modify non-existing key 'd' at: {'c': [1, 2, 3], 'b': 1}",
+            "a.d:DELETE' wants to modify non-existing key 'd' at:",
             lambda: self.oneTest("a.d:DELETE", None))
 
     def test_applyCustomizationRuleDeleteifMissingNode(self):
