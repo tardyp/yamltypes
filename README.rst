@@ -6,7 +6,6 @@
     :alt: Python 2.6, 2.7, 3.3, 3.4, pypy
     :target: https://pypi.python.org/pypi/yamltypes/
 
-Supported
 Yamltypes
 ==========
 
