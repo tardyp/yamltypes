@@ -209,6 +209,9 @@ class YamlConfigBuilder(object):
                  specfn=None, yamltypes_dirs=[], needSpec=True):
         if customizations is None:
             customizations = []
+        # if not specified, default to the directory the yaml file is in
+        if not yamltypes_dirs:
+            yamltypes_dirs.append(os.path.dirname(os.path.abspath(fn)))
         self._dict = self._yamlLoad(fn)
         self.mixCustomizations(os.path.basename(fn), customizations)
         self._ns = Namespace(self._dict)
