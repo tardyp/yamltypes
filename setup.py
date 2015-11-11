@@ -8,9 +8,15 @@ to install the package from the source archive.
 from setuptools import find_packages
 from setuptools import setup
 import os
+import sys
 
 version = 1.0
 README = open(os.path.join(os.path.dirname(__file__), "README.rst")).read()
+
+extra_install_requires = []
+if sys.version_info < (2, 7):
+    extra_install_requires.append('ordereddict>=1.1')
+
 
 setup(
     name="yamltypes",
@@ -20,12 +26,10 @@ setup(
     author="Pierre Tardy",
     author_email="tardyp@gmail.com",
     install_requires=[
-        'Mock',
         'pyyaml',
         'dictns == 1.4',
-        'nose >= 1.0 '
 
-    ],
+    ] + extra_install_requires,
     license="BSD",
     packages=find_packages(),
     options={

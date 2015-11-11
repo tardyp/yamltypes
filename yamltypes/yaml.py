@@ -81,8 +81,10 @@ except ImportError:
     _yamlLog.warning('Using Python implementation of YAML, make sure '
                        'libyaml-dev is installed in your virtual environment')
 
-from collections import OrderedDict
-
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 
 class _LastUpdatedOrderedDict(OrderedDict):
 

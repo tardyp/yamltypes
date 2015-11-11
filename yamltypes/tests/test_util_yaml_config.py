@@ -43,6 +43,11 @@ class BaseTestCase(TestCase):
             return
         raise Exception("%s not raised" % (exceptionClass,))
 
+    def assertIn(self, item, iterable):
+        self.assertTrue(item in iterable,
+                        msg="{item} not found in {iterable}"
+                             .format(item=item,
+                                     iterable=iterable))
 
 class TestYamlConfig(BaseTestCase):
 
