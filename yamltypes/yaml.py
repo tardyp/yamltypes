@@ -59,9 +59,9 @@
 #    this one, that's why we import all other dependencies with the '_' prefix.
 #
 ####################################################################################################
-
-# absolute_import enforce the import of the real yaml loader, and not reimport myself!
 from __future__ import absolute_import
+# absolute_import enforce the import of the real yaml loader, and not reimport myself!
+
 
 import logging as _logging
 
@@ -134,7 +134,7 @@ class DuplicateCheckLoader(Loader):
             key = self.construct_object(key_node, deep=deep)
             try:
                 hash(key)
-            except TypeError, exc:
+            except TypeError as exc:
                 raise ConstructorError("while constructing a mapping", node.start_mark,
                                        "found unacceptable key (%s)" % exc, key_node.start_mark)
             value = self.construct_object(value_node, deep=deep)
@@ -173,7 +173,7 @@ class SafeDuplicateCheckLoader(SafeLoader):
             key = self.construct_object(key_node, deep=deep)
             try:
                 hash(key)
-            except TypeError, exc:
+            except TypeError as exc:
                 raise ConstructorError("while constructing a mapping", node.start_mark,
                                        "found unacceptable key (%s)" % exc, key_node.start_mark)
             value = self.construct_object(value_node, deep=deep)
@@ -213,34 +213,34 @@ class SafeOrderedMapAndDuplicateCheckLoader(SafeDuplicateCheckLoader):
 
 # Overwrite the map creation constructors
 OrderedMapAndDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:map',
+    'tag:yaml.org,2002:map',
     OrderedMapAndDuplicateCheckLoader.construct_yaml_map)
 OrderedMapAndDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:python/dict',
+    'tag:yaml.org,2002:python/dict',
     OrderedMapAndDuplicateCheckLoader.construct_yaml_map)
 
 # Overwrite the map creation constructors (safe loaders)
 SafeOrderedMapAndDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:map',
+    'tag:yaml.org,2002:map',
     SafeOrderedMapAndDuplicateCheckLoader.construct_yaml_map)
 SafeOrderedMapAndDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:python/dict',
+    'tag:yaml.org,2002:python/dict',
     SafeOrderedMapAndDuplicateCheckLoader.construct_yaml_map)
 
 # Overwrite the map creation constructors
 DuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:map',
+    'tag:yaml.org,2002:map',
     DuplicateCheckLoader.construct_yaml_map)
 DuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:python/dict',
+    'tag:yaml.org,2002:python/dict',
     DuplicateCheckLoader.construct_yaml_map)
 
 # Overwrite the map creation constructors (safe loaders)
 SafeDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:map',
+    'tag:yaml.org,2002:map',
     SafeDuplicateCheckLoader.construct_yaml_map)
 SafeDuplicateCheckLoader.add_constructor(
-    u'tag:yaml.org,2002:python/dict',
+    'tag:yaml.org,2002:python/dict',
     SafeDuplicateCheckLoader.construct_yaml_map)
 
 _orig_load = load

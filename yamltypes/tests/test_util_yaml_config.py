@@ -12,6 +12,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright Buildbot Team Members
+from __future__ import absolute_import
 
 import os
 
@@ -405,6 +406,6 @@ class TestYamlLoader(BaseTestCase):
             },
             "z": 9
         })
-        self.assertEqual(d.keys(), ['b', 'a', 'c', 'z', 'f', 't'])
-        self.assertEqual(d.t.keys(), ['t1', 't3', 't2'])
+        self.assertEqual(list(d.keys()), ['b', 'a', 'c', 'z', 'f', 't'])
+        self.assertEqual(list(d.t.keys()), ['t1', 't3', 't2'])
     _testOrderedKeysInNamespace.skip = "Namespace doesn't keep OrderedDict"

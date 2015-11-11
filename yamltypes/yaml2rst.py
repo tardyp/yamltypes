@@ -144,7 +144,7 @@ class RstFile(object):
                     self.makeType(collection.replace("of", " of") + basetype)
         if "names_type" in v:
             self.write("**Keys type**: ")
-            if isinstance(v['names_type'], basestring):
+            if isinstance(v['names_type'], str):
                 self.write(":ref:`%s_%s`" % (self.namespace, v['names_type']))
             else:
                 self.indent()
@@ -158,7 +158,7 @@ class RstFile(object):
             known_type = True
             self.write("**Parameters**:")
             self.write()
-            keys = v["kids"].keys()
+            keys = list(v["kids"].keys())
             for k in sorted(keys):
                 self.indent()
                 childpath = relpath
@@ -226,8 +226,8 @@ def main():
         out.write("These are the base types that can be used in the Yaml files.")
         out.write()
 
-        known_types.update(BASE_TYPES.keys())
-        types = BASE_TYPES.items() + loadTypes(args.path).items()
+        known_types.update(list(BASE_TYPES.keys()))
+        types = list(BASE_TYPES.items()) + list(loadTypes(args.path).items())
         types.sort()
 
         for k, v in types:
@@ -249,7 +249,7 @@ def main():
             out.makeTitle("``%s``" % (k,), '~')
             if 'root' in v:
                 if 'description' not in v['root']:
-                    print "warning", fn, "does not have a description"
+                    print("warning", fn, "does not have a description")
                 out.dumpTypeSpec(basedir + "_" + k, v['root'], basedir + "." + k)
 
         out.close()

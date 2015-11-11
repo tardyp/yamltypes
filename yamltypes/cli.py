@@ -1,4 +1,4 @@
-from yamlconfig import YamlConfig, YamlError
+from .yamlconfig import YamlConfig, YamlError
 import argparse
 import sys
 
@@ -20,8 +20,8 @@ def main():
     for fn in args.yamls:
         try:
             YamlConfig(fn, specfn=args.meta, yamltypes_dirs=args.path)
-            print fn, "looks good!"
+            print(fn, "looks good!")
         except YamlError as e:
-            print >>sys.stderr, e.message
+            print(e.message, file=sys.stderr)
             ret = 1
     return ret
